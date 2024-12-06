@@ -38,14 +38,15 @@
       <p class="text-text text-xl font-medium text-center">Henüz sonuç yok.</p>
     {:else}
       <div class="flex items-center justify-between p-2">
+        <span class="text-title text-xl font-medium w-12">Sıra</span>
         <span class="text-title text-xl font-semibold">İsim</span>
-        <span class="text-title text-xl font-semibold text-center">Ortalama <br> Puan</span>
+        <span class="text-title text-xl font-semibold text-center ml-auto">Ortalama <br> Puan</span>
       </div>
-      {#each list as person}
+      {#each list as person, index}
         <div class="flex items-center justify-between p-2">
+          <span class="text-button text-xl font-medium w-12">{index + 1}.</span>
           <span class="text-text text-xl font-medium">{person.name}</span>
-          <span class="text-button text-xl font-medium mr-4">{person.averageScore.toFixed(2)}</span>
-          <!-- <span class="text-button text-xl font-medium">Ortalama Puan: {person.averageScore.toFixed(2)} ({person.starsCount} oy)</span> -->
+          <span class="text-button text-xl font-medium mr-4 ml-auto">{person.averageScore.toFixed(2)}</span>
         </div>
       {/each}
     {/if}
